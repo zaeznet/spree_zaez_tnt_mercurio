@@ -1,0 +1,28 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soap:Body>
+    <ns1:calculaFreteResponse xmlns:ns1="http://service.calculoFrete.mercurio.com">
+      <ns1:out>
+        <errorList xmlns="http://model.expedicao.lms.mercurio.com\">
+          <ns1:string>Peso da mercadoria est\xC3\xA1 fora dos limites.</ns1:string>
+        </errorList>
+        <nmDestinatario xmlns="http://model.expedicao.lms.mercurio.com" xsi:nil="true" />
+        <nmMunicipioDestino xmlns="http://model.expedicao.lms.mercurio.com" xsi:nil="true" />
+        <nmMunicipioOrigem xmlns="http://model.expedicao.lms.mercurio.com" xsi:nil="true" />
+        <nmRemetente xmlns="http://model.expedicao.lms.mercurio.com" xsi:nil="true" />
+        <nrDDDFilialDestino xmlns="http://model.expedicao.lms.mercurio.com" xsi:nil="true" />
+        <nrDDDFilialOrigem xmlns="http://model.expedicao.lms.mercurio.com" xsi:nil="true" />
+        <nrTelefoneFilialDestino xmlns="http://model.expedicao.lms.mercurio.com" xsi:nil="true" />
+        <nrTelefoneFilialOrigem xmlns="http://model.expedicao.lms.mercurio.com" xsi:nil="true" />
+        <parcelas xmlns="http://model.expedicao.lms.mercurio.com" xsi:nil="true" />
+        <prazoEntrega xmlns="http://model.expedicao.lms.mercurio.com">0</prazoEntrega>
+        <servicosAdicionais xmlns="http://model.expedicao.lms.mercurio.com" xsi:nil="true" />
+        <vlDesconto xmlns="http://model.expedicao.lms.mercurio.com" xsi:nil="true" />
+        <vlICMSubstituicaoTributaria xmlns="http://model.expedicao.lms.mercurio.com" xsi:nil="true" />
+        <vlImposto xmlns="http://model.expedicao.lms.mercurio.com" xsi:nil="true" />
+        <vlTotalCtrc xmlns="http://model.expedicao.lms.mercurio.com" xsi:nil="true" />
+        <vlTotalFrete xmlns="http://model.expedicao.lms.mercurio.com" xsi:nil="true" />
+        <vlTotalServico xmlns="http://model.expedicao.lms.mercurio.com" xsi:nil="true" />
+      </ns1:out>
+    </ns1:calculaFreteResponse>
+  </soap:Body>
+</soap:Envelope>

@@ -1,0 +1,155 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soap:Body>
+    <ns1:calculaFreteResponse xmlns:ns1="http://service.calculoFrete.mercurio.com">
+    <ns1:out>
+      <errorList xmlns="http://model.expedicao.lms.mercurio.com" />
+      <nmDestinatario xmlns="http://model.expedicao.lms.mercurio.com" xsi:nil="true" />
+      <nmMunicipioDestino xmlns="http://model.expedicao.lms.mercurio.com">Ja\xC3\xBA</nmMunicipioDestino>
+      <nmMunicipioOrigem xmlns="http://model.expedicao.lms.mercurio.com">S\xC3\xA3o Paulo</nmMunicipioOrigem>
+      <nmRemetente xmlns="http://model.expedicao.lms.mercurio.com">RAZAO SOCIAL EMPRESA</nmRemetente>
+      <nrDDDFilialDestino xmlns="http://model.expedicao.lms.mercurio.com\">14</nrDDDFilialDestino>
+      <nrDDDFilialOrigem xmlns="http://model.expedicao.lms.mercurio.com\">11</nrDDDFilialOrigem>
+      <nrTelefoneFilialDestino xmlns="http://model.expedicao.lms.mercurio.com\">40095000</nrTelefoneFilialDestino>
+      <nrTelefoneFilialOrigem xmlns="http://model.expedicao.lms.mercurio.com\">4009-5000</nrTelefoneFilialOrigem>
+      <parcelas xmlns="http://model.expedicao.lms.mercurio.com">
+        <ParcelasFreteWebService>
+          <dsParcela>Frete peso</dsParcela>
+          <vlParcela>32.07</vlParcela>
+        </ParcelasFreteWebService>
+        <ParcelasFreteWebService>
+          <dsParcela>Frete Valor</dsParcela>
+          <vlParcela>0.28</vlParcela>
+        </ParcelasFreteWebService>
+        <ParcelasFreteWebService>
+          <dsParcela>GRIS</dsParcela>
+          <vlParcela>5.19</vlParcela>
+        </ParcelasFreteWebService>
+        <ParcelasFreteWebService>
+          <dsParcela>Ped\xC3\xA1gio</dsParcela>
+          <vlParcela>5.53</vlParcela>
+        </ParcelasFreteWebService>
+        <ParcelasFreteWebService>
+          <dsParcela>Despacho</dsParcela>
+          <vlParcela>26.22</vlParcela>
+        </ParcelasFreteWebService>
+      </parcelas>
+      <prazoEntrega xmlns="http://model.expedicao.lms.mercurio.com">3</prazoEntrega>
+      <servicosAdicionais xmlns="http://model.expedicao.lms.mercurio.com">
+        <ServicoAdicionalWebService>
+          <dsComplemento>15,86% sobre o valor do frete com m\xC3\xADnimo de R$ 11,69.</dsComplemento>
+          <nmServico>Agendamento de entrega</nmServico>
+          <sgMoeda>R$</sgMoeda>
+          <vlServico>15.86</vlServico>
+        </ServicoAdicionalWebService>
+        <ServicoAdicionalWebService>
+          <dsComplemento>Custo + Impostos + 27,19%.</dsComplemento>
+          <nmServico>Capatazia</nmServico>
+          <sgMoeda>R$</sgMoeda>
+          <vlServico>27.19</vlServico>
+        </ServicoAdicionalWebService>
+        <ServicoAdicionalWebService>
+          <dsComplemento>R$ 7,22 - 2 seguran\xC3\xA7as - unidirecional - por km rodado.</dsComplemento>
+          <nmServico>Escolta</nmServico>
+          <sgMoeda>R$</sgMoeda>
+          <vlServico>7.22</vlServico>
+        </ServicoAdicionalWebService>
+        <ServicoAdicionalWebService>
+          <dsComplemento>R$ 1.087,58 por per\xC3\xADodo.</dsComplemento>
+          <nmServico>Estadia de veiculo conjunto</nmServico>
+          <sgMoeda>R$</sgMoeda>
+          <vlServico>1087.58</vlServico>
+        </ServicoAdicionalWebService>
+        <ServicoAdicionalWebService>
+          <dsComplemento>R$ 1.010,04 por per\xC3\xADodo.</dsComplemento>
+          <nmServico>Estadia de ve\xC3\xADculo 3/4</nmServico>
+          <sgMoeda>R$</sgMoeda>
+          <vlServico>1010.04</vlServico>
+        </ServicoAdicionalWebService>
+        <ServicoAdicionalWebService>
+          <dsComplemento>R$ 884,38 por per\xC3\xADodo.</dsComplemento>
+          <nmServico>Estadia de ve\xC3\xADculo carreta</nmServico>
+          <sgMoeda>R$</sgMoeda>
+          <vlServico>884.38</vlServico>
+        </ServicoAdicionalWebService>
+        <ServicoAdicionalWebService>
+          <dsComplemento>R$ 707,59 por per\xC3\xADodo.</dsComplemento>
+          <nmServico>Estadia de ve\xC3\xADculo toco</nmServico>
+          <sgMoeda>R$</sgMoeda>
+          <vlServico>707.59</vlServico>
+        </ServicoAdicionalWebService>
+        <ServicoAdicionalWebService>
+          <dsComplemento>R$ 707,59 por per\xC3\xADodo.</dsComplemento>
+          <nmServico>Estadia de ve\xC3\xADculo truck</nmServico>
+          <sgMoeda>R$</sgMoeda>
+          <vlServico>707.59</vlServico>
+        </ServicoAdicionalWebService>
+        <ServicoAdicionalWebService>
+          <dsComplemento>R$ 25,99 por pallet padr\xC3\xA3o PBR.</dsComplemento>
+          <nmServico>Paletiza\xC3\xA7\xC3\xA3o</nmServico>
+          <sgMoeda>R$</sgMoeda>
+          <vlServico>25.99</vlServico>
+        </ServicoAdicionalWebService>
+        <ServicoAdicionalWebService>
+          <dsComplemento>0,18% sobre o valor da mercadoria por per\xC3\xADodo.</dsComplemento>
+          <nmServico>Seguro da carga em perman\xC3\xAAncia</nmServico>
+          <sgMoeda>R$</sgMoeda>
+          <vlServico>0.18</vlServico>
+        </ServicoAdicionalWebService>
+        <ServicoAdicionalWebService>
+          <dsComplemento>R$ 0,19 por kg/dia com m\xC3\xADnimo de R$ 20,06 com car\xC3\xAAncia de 3 dias e decurso de prazo de 15 dias.</dsComplemento>
+          <nmServico>Taxa de fiel deposit\xC3\xA1rio</nmServico>
+          <sgMoeda>R$</sgMoeda>
+          <vlServico>0.19</vlServico>
+        </ServicoAdicionalWebService>
+        <ServicoAdicionalWebService>
+          <dsComplemento>R$ 0,28 por kg/dia com m\xC3\xADnimo de R$ 28,66 com car\xC3\xAAncia de 15 dias e decurso de prazo de 15 dias.</dsComplemento>
+          <nmServico>Taxa de perman\xC3\xAAncia de carga</nmServico>
+          <sgMoeda>R$</sgMoeda>
+          <vlServico>0.28</vlServico>
+        </ServicoAdicionalWebService>
+        <ServicoAdicionalWebService>
+          <dsComplemento xsi:nil="true" />
+          <nmServico>Valor por km ve\xC3\xADculo dedicado 3/4 ou van</nmServico>
+          <sgMoeda>R$</sgMoeda>
+          <vlServico>1.63</vlServico>
+        </ServicoAdicionalWebService>
+        <ServicoAdicionalWebService>
+          <dsComplemento xsi:nil="true" />
+          <nmServico>Valor por km ve\xC3\xADculo dedicado carreta</nmServico>
+          <sgMoeda>R$</sgMoeda>
+          <vlServico>2.27</vlServico>
+        </ServicoAdicionalWebService>
+        <ServicoAdicionalWebService>
+          <dsComplemento>1,99% sobre o valor do frete com m\xC3\xADnimo de R$ 0,00.</dsComplemento>
+          <nmServico>Valor por km ve\xC3\xADculo dedicado toco ou truck</nmServico>
+          <sgMoeda>R$</sgMoeda>
+          <vlServico>1.99</vlServico>
+        </ServicoAdicionalWebService>
+        <ServicoAdicionalWebService>
+          <dsComplemento>R$ 506,72 por entrega - R$ 1,63 por km excedente (100 km).</dsComplemento>
+          <nmServico>Ve\xC3\xADculo dedicado 3/4 ou van</nmServico>
+          <sgMoeda>R$</sgMoeda>
+          <vlServico>506.72</vlServico>
+        </ServicoAdicionalWebService>
+        <ServicoAdicionalWebService>
+          <dsComplemento>R$ 928,58 por entrega - R$ 2,27 por km excedente (100 km).</dsComplemento>
+          <nmServico>Ve\xC3\xADculo dedicado carreta</nmServico>
+          <sgMoeda>R$</sgMoeda>
+          <vlServico>928.58</vlServico>
+        </ServicoAdicionalWebService>
+        <ServicoAdicionalWebService>
+          <dsComplemento>R$ 545,63 por entrega - R$ 1,99 por km excedente (100 km).</dsComplemento>
+          <nmServico>Ve\xC3\xADculo dedicado toco ou truck</nmServico>
+          <sgMoeda>R$</sgMoeda><vlServico>545.63</vlServico>
+        </ServicoAdicionalWebService>
+      </servicosAdicionais>
+      <vlDesconto xmlns="http://model.expedicao.lms.mercurio.com">0.00</vlDesconto>
+      <vlICMSubstituicaoTributaria xmlns="http://model.expedicao.lms.mercurio.com">0</vlICMSubstituicaoTributaria>
+      <vlImposto xmlns="http://model.expedicao.lms.mercurio.com">8.31</vlImposto>
+      <vlTotalCtrc xmlns="http://model.expedicao.lms.mercurio.com">69.29</vlTotalCtrc>
+      <vlTotalFrete xmlns="http://model.expedicao.lms.mercurio.com">69.29</vlTotalFrete>
+      <vlTotalServico xmlns="http://model.expedicao.lms.mercurio.com">0.00</vlTotalServico>
+    </ns1:out>
+    </ns1:calculaFreteResponse>
+  </soap:Body>
+</soap:Envelope>

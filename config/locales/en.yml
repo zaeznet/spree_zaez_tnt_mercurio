@@ -1,0 +1,41 @@
+en:
+  tnt_mercurio_settings: TNT Mercurio Settings
+  additional_days:  Additional delivery days
+  additional_value: Additional value
+  email:    Email
+  password: Password
+  division: Division
+  type_cgc: CGC Type
+  cgc:      CGC
+  state_registry: State Registry
+  tax_situation:  Tax Situation
+  billet_type:    Billet Type
+  spree:
+    tnt_mercurio_settings: TNT Mercurio Settings
+    email: Email
+    password: Password
+    division: Division
+    tax_situation: Tax Situation
+    tax_situation_co: CO - Contribuinte
+    tax_situation_nc: NC - Não Contribuinte
+    tax_situation_ci: CI - Contribuinte Incentivado
+    tax_situation_cm: CM - Contribuinte Incentivado
+    tax_situation_cn: CN - Cia. Mista Não Contribuinte
+    tax_situation_me: ME - Simples Nacional Contribuinte
+    tax_situation_mn: MN - Simples Nacional Não Contribuinte
+    tax_situation_pr: PR - Produtor Rural Contribuinte
+    tax_situation_pn: PN - Produtor Rural Não Contribuinte
+    tax_situation_op: OP - Órgão Público Contribuinte
+    tax_situation_on: ON - Órgão Público Não Contribuinte
+    tax_situation_of: OF - Órgão Público - Prog. de Fort. e Modern. Est.
+    state_registry: State Registry
+    cgc: CGC
+    type_cgc: CGC Type
+    type_cgc_f: Personal
+    type_cgc_j: Business
+    billet_type: Billet Type
+    billet_type_c: CIF
+    billet_type_f: FOB
+    additional_days:  Additional Days
+    additional_value: Additional Value
+    customer_field: Customer Field

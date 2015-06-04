@@ -1,0 +1,76 @@
+<%= render :partial => 'spree/admin/shared/sub_menu/configuration' %>
+
+<% content_for :page_title do %>
+    <%= Spree.t(:tnt_mercurio_settings) %>
+<% end %>
+
+<%= form_tag admin_tnt_mercurio_settings_path, :method => :put  do |form| %>
+    <div id="tnt_mercurio_preferences" data-hook="tnt_mercurio_preferences">
+      <div class="row">
+        <div class="col-sm-6">
+          <%= label_tag(:email, Spree.t(:email) + ': ') + tag(:br) %>
+          <%= text_field_tag :email, @config.email, class: 'form-control' %>
+        </div>
+        <div class="col-sm-6">
+          <%= label_tag(:password, Spree.t(:password) + ': ') + tag(:br) %>
+          <%= text_field_tag :password, @config.password, class: 'form-control' %>
+        </div>
+        <div class="col-sm-6">
+          <%= label_tag(:division, Spree.t(:division) + ': ') + tag(:br) %>
+          <%= text_field_tag :division, @config.division, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <%= label_tag(:cgc, Spree.t(:cgc) + ': ') + tag(:br) %>
+          <%= text_field_tag :cgc, @config.cgc, class: 'form-control' %>
+        </div>
+        <div class="col-sm-6">
+          <%= label_tag(:state_registry, Spree.t(:state_registry) + ': ') + tag(:br) %>
+          <%= text_field_tag :state_registry, @config.state_registry, class: 'form-control' %>
+        </div>
+        <div class="col-sm-6">
+          <%= label_tag(:type_cgc, Spree.t(:type_cgc) + ': ') + tag(:br) %>
+          <%= radio_button_tag :type_cgc, 'F', @config.type_cgc == 'F' %>
+          <%= label_tag(:type_cgc_f, Spree.t(:type_cgc_f)) %>
+          <%= radio_button_tag :type_cgc, 'J', @config.type_cgc == 'J' %>
+          <%= label_tag(:type_cgc_j, Spree.t(:type_cgc_j)) %>
+        </div>
+        <div class="col-sm-6">
+          <%= label_tag(:billet_type, Spree.t(:billet_type) + ': ') + tag(:br) %>
+          <%= radio_button_tag :billet_type, 'F', @config.billet_type == 'F'  %>
+          <%= label_tag(:billet_type_f, Spree.t(:billet_type_f)) %>
+          <%= radio_button_tag :billet_type, 'C', @config.billet_type == 'C'  %>
+          <%= label_tag(:billet_type_c, Spree.t(:billet_type_c)) %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <%= label_tag(:tax_situation, Spree.t(:tax_situation) + ': ') + tag(:br) %>
+          <% @tax_situations.each do |situation| %>
+            <div class="col-sm-6 <%= cycle('p-l-n', '') -%>">
+              <%= radio_button_tag :tax_situation, situation.to_s.upcase, @config.tax_situation.downcase == situation.to_s %>
+              <%= label_tag "tax_situation_#{situation}".to_sym, Spree.t("tax_situation_#{situation}") %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <%= label_tag(:additional_days, Spree.t(:additional_days) + ': ') + tag(:br) %>
+          <%= text_field_tag :additional_days, @config.additional_days, class: 'form-control' %>
+        </div>
+        <div class="col-sm-6">
+          <%= label_tag(:additional_value, Spree.t(:additional_value) + ': ') + tag(:br) %>
+          <%= text_field_tag :additional_value, @config.additional_value, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <%= label_tag(:customer_field, Spree.t(:customer_field) + ': ') + tag(:br) %>
+          <%= select_tag :customer_field, options_for_select(@user_attr.collect { |item| [t(item), item] }, @config.customer_field), class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    <%= render partial: 'spree/admin/shared/edit_resource_links', locals: { collection_url: edit_admin_tnt_mercurio_settings_url } %>
+<% end %>

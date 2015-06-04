@@ -1,0 +1,41 @@
+pt-BR:
+  tnt_mercurio_settings: Configurações TNT Mercúrio
+  additional_days:  Dias adicionais
+  additional_value: Valor adicional
+  email:    Email
+  password: Senha
+  division: Divisão
+  type_cgc: Tipo CGC
+  cgc:      CGC (Cadastro Geral de Contribuintes)
+  state_registry: Inscrição Estadual
+  tax_situtation: Situação Tributária
+  billet_type:    Tipo de Cobrança
+  spree:
+    tnt_mercurio_settings: Configurações TNT Mercúrio
+    email: Email
+    password: Senha
+    division: Código da Divisão
+    tax_situation: Situação Tributária
+    tax_situation_co: CO - Contribuinte
+    tax_situation_nc: NC - Não Contribuinte
+    tax_situation_ci: CI - Contribuinte Incentivado
+    tax_situation_cm: CM - Contribuinte Incentivado
+    tax_situation_cn: CN - Cia. Mista Não Contribuinte
+    tax_situation_me: ME - Simples Nacional Contribuinte
+    tax_situation_mn: MN - Simples Nacional Não Contribuinte
+    tax_situation_pr: PR - Produtor Rural Contribuinte
+    tax_situation_pn: PN - Produtor Rural Não Contribuinte
+    tax_situation_op: OP - Órgão Público Contribuinte
+    tax_situation_on: ON - Órgão Público Não Contribuinte
+    tax_situation_of: OF - Órgão Público - Prog. de Fort. e Modern. Est.
+    state_registry: Inscrição Estadual
+    cgc: CGC (Cadastro Geral de Contribuintes)
+    type_cgc: Tipo CGC
+    type_cgc_f: Física
+    type_cgc_j: Jurídica
+    billet_type: Tipo de Cobrança
+    billet_type_c: CIF
+    billet_type_f: FOB
+    additional_days:  Dias Adicionais
+    additional_value: Valor Adicional
+    customer_field: Campo do cliente (onde fica armazenado o CPF/CNPJ)
