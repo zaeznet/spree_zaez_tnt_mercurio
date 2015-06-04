@@ -1,4 +1,4 @@
-Spree TNT Mercúrio
+Spree TNT Mercúrio [![Build Status](https://travis-ci.org/zaeznet/spree_zaez_tnt_mercurio.svg?branch=master)](https://travis-ci.org/zaeznet/spree_zaez_tnt_mercurio)
 =============
 
 This gem implements diverse functions in order to enable the use of services from TNT Mercúrio in Spree Commerce.
