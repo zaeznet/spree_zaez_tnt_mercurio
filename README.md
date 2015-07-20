@@ -9,7 +9,7 @@ Installation
 Add spree_zaez_tnt_mercurio to your Gemfile:
 
 ```ruby
-gem 'spree_zaez_tnt_mercurio'
+gem 'spree_zaez_tnt_mercurio', github: 'zaeznet/spree_zaez_tnt_mercurio'
 ```
 
 Bundle your dependencies and run the installation generator:
