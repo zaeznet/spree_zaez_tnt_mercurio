@@ -86,7 +86,7 @@ shared_examples_for 'tnt calculator' do
       savon.expects(:calcula_frete).with(message: @params).returns(fixture)
       response = calculator.compute_package(@package)
 
-      expect(response).to eq(69.29)
+      expect(response[:cost]).to eq(69.29)
       expect(calculator.delivery_time).to eq(3)
 
     end
@@ -113,7 +113,7 @@ shared_examples_for 'tnt calculator' do
       savon.expects(:calcula_frete).with(message: @params).returns(fixture)
       response = calculator.compute_package(@package)
 
-      expect(response).to eq(79.29)
+      expect(response[:cost]).to eq(79.29)
 
       # set value default after test
       Spree::TntMercurioConfig.additional_value = 0
@@ -132,7 +132,7 @@ shared_examples_for 'tnt calculator' do
       savon.expects(:calcula_frete).with(message: @params).returns(fixture)
       response = calculator.compute_package(@package)
 
-      expect(response).to be false
+      expect(response).to eq Hash.new
     end
 
     it 'should return false if the credentials are invalid' do
@@ -152,7 +152,7 @@ shared_examples_for 'tnt calculator' do
 
       response = calculator.compute_package(@package)
 
-      expect(response).to be false
+      expect(response).to eq Hash.new
     end
   end
 
