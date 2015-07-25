@@ -34,9 +34,10 @@ module Spree
 
       @delivery_time = response[:calcula_frete_response][:out][:prazo_entrega].to_i + Spree::TntMercurioConfig.additional_days
 
-      response[:calcula_frete_response][:out][:vl_total_frete].to_f + Spree::TntMercurioConfig.additional_value
+      cost = response[:calcula_frete_response][:out][:vl_total_frete].to_f + Spree::TntMercurioConfig.additional_value
+      {cost: cost, delivery_time: @delivery_time}
     rescue
-      false
+      {}
     end
   end
 end
