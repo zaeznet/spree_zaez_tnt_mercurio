@@ -12,6 +12,9 @@ module Spree
       cgc_customer = order.user.attributes[Spree::TntMercurioConfig.customer_field]
       cgc_type = if cgc_customer.delete('.').delete('-').size <= 11 then 'F' else 'J' end
 
+      zipcode_from = stock_location.zipcode.gsub(/[.-]/i, '')
+      zipcode_to = order.ship_address.zipcode.gsub(/[.-]/i, '')
+
       params = {in0: {login: Spree::TntMercurioConfig.email,
                       senha: Spree::TntMercurioConfig.password,
                       nr_identif_cliente_rem: Spree::TntMercurioConfig.cgc,
@@ -21,8 +24,8 @@ module Spree
                       tp_pessoa_remetente: Spree::TntMercurioConfig.type_cgc,
                       tp_pessoa_destinatario: cgc_type,
                       tp_situacao_tributaria_destinatario: 'NC',
-                      cep_origem: stock_location.zipcode,
-                      cep_destino: order.ship_address.zipcode,
+                      cep_origem: zipcode_from,
+                      cep_destino: zipcode_to,
                       vl_mercadoria: order.amount.to_s,
                       ps_real: object.weight.to_s,
                       tp_servico: shipping_method,
