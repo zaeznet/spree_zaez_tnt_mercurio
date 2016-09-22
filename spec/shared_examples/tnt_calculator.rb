@@ -156,4 +156,53 @@ shared_examples_for 'tnt calculator' do
     end
   end
 
+  context 'using information of previuos order' do
+
+    let(:previous_order) { create(:shipped_order) }
+    let(:shipping_method) { create(:shipping_method, name: 'TNT') }
+    let!(:shipping_calculator) { create(:calculator,
+                                        calculable: shipping_method,
+                                        type: "Spree::Calculator::Shipping::TntMercurio#{calculator.shipping_method}") }
+
+    before do
+      create(:shipping_rate, shipment: previous_order.shipments.first, cost: 15,
+             delivery_time: 5, shipping_method: shipping_method, selected: 1)
+
+      # New Order
+      user = create(:user, authentication_token: '12345678900')
+      @new_order = create(:order, line_items: previous_order.line_items,
+                      ship_address: previous_order.ship_address, user: user)
+      stock_location = create(:stock_location, zipcode: '08465312')
+      shipment = create(:shipment, order: @new_order, stock_location: stock_location)
+      @new_package = shipment.to_package
+
+      @new_params = {in0: {login: 'teste@email.com',
+                           senha: 'password',
+                           nr_identif_cliente_rem: '1234678900000',
+                           nr_inscricao_estadual_remetente: '344028650118',
+                           nr_identif_cliente_dest: '12345678900',
+                           tp_situacao_tributaria_remetente: 'CO',
+                           tp_pessoa_remetente: 'J',
+                           tp_pessoa_destinatario: 'F',
+                           tp_situacao_tributaria_destinatario: 'NC',
+                           cep_origem: '08465312',
+                           cep_destino: @new_order.ship_address.zipcode,
+                           vl_mercadoria: @new_order.total.to_s,
+                           ps_real: @new_package.weight.to_s,
+                           tp_servico: calculator.shipping_method,
+                           tp_frete: 'C',
+                           cd_divisao_cliente: 1}}
+    end
+
+    it 'should use information of previous orders when request to TNT fails' do
+      fixture = File.read('spec/fixtures/calcula_frete/error_response.xml')
+      savon.expects(:calcula_frete).with(message: @new_params).returns(fixture)
+      response = calculator.compute_package(@new_package)
+
+      expect(response[:cost]).to eq 15
+      expect(response[:delivery_time]).to eq 5
+    end
+
+  end
+
 end

@@ -40,7 +40,38 @@ module Spree
       cost = response[:calcula_frete_response][:out][:vl_total_frete].to_f + Spree::TntMercurioConfig.additional_value
       {cost: cost, delivery_time: @delivery_time}
     rescue
+      try_calculate_from_orders(zipcode_to, object.weight)
+    end
+
+    # Tenta buscar um pedido feito para o mesmo CEP de entrega e
+    # que tenha um peso parecido (diferenca de 1kg para mais ou menos)
+    # para recuperar o valor do frete e o tempo de entrega
+    def try_calculate_from_orders(zipcode, weight)
+      shipping_type = "Spree::Calculator::Shipping::TntMercurio#{shipping_method}"
+      calculator = Spree::Calculator.find_by(type: shipping_type, calculable_type: 'Spree::ShippingMethod')
+      return {} if calculator.nil?
+      shipping_method_id = calculator.calculable_id
+
+      shipping_rates_id = Spree::ShippingRate.joins(:shipping_method).joins(shipment: :order).
+          joins('INNER JOIN spree_addresses ON spree_addresses.id = spree_orders.ship_address_id').
+          where(shipping_method_id: shipping_method_id, spree_addresses: { zipcode: zipcode }).
+          group('spree_shipping_rates.id').pluck(:id)
+
+      init_value = weight - 1
+      final_value = weight + 1
+
+      shipping_rates_id.each do |id|
+        shipping_rate = Spree::ShippingRate.find(id)
+        weight = shipping_rate.shipment.to_package.weight
+
+        if weight.between?(init_value, final_value)
+          return { cost: shipping_rate.cost.to_f, delivery_time: shipping_rate.delivery_time }
+        end
+      end
+      {}
+    rescue
       {}
     end
+
   end
 end

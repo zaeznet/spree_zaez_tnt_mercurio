@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_zaez_tnt_mercurio'
-  s.version     = '3.0.5'
+  s.version     = '3.0.6'
   s.summary     = 'Implements diverse functions in order to enable the use of services from TNT Mercúrio in Spree Commerce'
   s.description = 'Implements diverse functions in order to enable the use of services from TNT Mercúrio in Spree Commerce'
   s.required_ruby_version = '>= 2.0.0'
