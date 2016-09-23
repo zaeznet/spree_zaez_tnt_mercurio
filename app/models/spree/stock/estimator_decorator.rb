@@ -7,7 +7,7 @@ Spree::Stock::Estimator.class_eval do
       if response.is_a? Hash
         cost = response[:cost]
         delivery_time = response[:delivery_time]
-      elsif %w(Float BigDecimal).include? response.class.to_s
+      elsif %w(Float BigDecimal Fixnum).include? response.class.to_s
         cost = response
         delivery_time = nil
       end
